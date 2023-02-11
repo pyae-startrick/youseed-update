@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+        /* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+#map {
+  height: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 35.6894,
+                    lng: 139.692
+                },
+                // 1.34286831604678, 103.88323132100408
+                zoom: 11,
+                // minZoom: 5,
+                // maxZoom: 15,
+                mapTypeId: "hybrid",
+                scrollwheel: true
+            });
+            const uluru = {
+                lat: 35.6894,
+                lng: 139.692
+            };
+            let marker = new google.maps.Marker({
+                position: uluru,
+                draggable: true,
+                map: map,
+            });
+            google.maps.event.addListener(marker, 'position_changed',
+                function() {
+                    let lat = marker.position.lat()
+                    let lng = marker.position.lng()
+                    $('#lat').val(lat)
+                    $('#lng').val(lng)
+                })
+            google.maps.event.addListener(map, 'click',
+                function(event) {
+                    pos = event.latLng
+                    marker.setPosition(pos)
+                })
+        }
+
+window.initMap = initMap;
+    </script>
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>

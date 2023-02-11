@@ -1,0 +1,203 @@
+
+.input-label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.19;
+    color: $dark-blue;
+
+    .braces {
+        font-size: 11px;
+    }
+}
+
+.category-filter-title {
+    position: relative;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.19;
+    color: $dark-blue;
+
+    &:after {
+        content: '';
+        width: 50px;
+        height: 3px;
+        background-color: $primary;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+
+        .rtl & {
+            left: auto;
+            right: 0;
+        }
+    }
+}
+
+.accordion-content-wrapper {
+    position: relative;
+}
+
+.webinar-form {
+
+    .webinar-category-filters {
+        padding: 24px 28px;
+        border-radius: 10px;
+        box-shadow: 0px 12px 23px 0px rgb(62 73 84 / 4%);
+        background-color: #ffffff;
+        border: 1px solid $gray-200;
+    }
+
+    .table-responsive {
+        overflow: visible;
+
+        @media (max-width: $screen-sm-max) {
+            overflow: auto;
+        }
+    }
+
+    .table {
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 3px 30px -10px rgba(0, 0, 0, 0.1);
+        border: 1px solid $gray-200;
+
+        th {
+            border-top: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #818894;
+        }
+
+        .btn-gray200 {
+            font-size: 14px;
+        }
+    }
+}
+
+.range-time-picker {
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 0 .5rem .5rem 0;
+    width: 100%;
+
+    input {
+        border: none;
+        max-width: 60px;
+        padding: 0 0 0 1rem;
+    }
+}
+
+.webinar-progress {
+
+    .progress-item {
+        padding: 0 25px;
+        border-left: 1px solid $gray-300;
+
+        button{
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: $primary;
+                transition: all 0.3s ease;
+            }
+        }
+
+        &:first-child {
+            padding-left: 0;
+            border-left: none;
+        }
+
+        .progress-icon {
+            background-color: $gray-200;
+            width: 48px;
+            height: 48px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: #43d477;
+                transition: all 0.3s ease;
+            }
+
+            &.active {
+                background-color: transparent;
+                background-image: linear-gradient(to bottom, #9effc1, #43d477);
+            }
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        .progress-item {
+            border-left: 0;
+            padding: 0;
+            margin: 5px 0;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.gradient-card {
+    --card-gradient: rgba(0, 0, 0, 0.8);
+    --card-gradient: #5e99d99a, #f4f1f39e;
+    // --card-gradient: tomato, orange;
+    --card-blend-mode: overlay;
+    // --card-blend-mode: multiply;
+  
+    background-color: #fff;
+    height: 508px;
+    position: relative;
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    padding-bottom: 1rem;
+    background-image: linear-gradient(
+        rgba(40, 40, 40, 1),
+      #fff max(0rem, 24vh)
+    );
+    overflow: hidden;
+  
+    img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      width: 100%;
+      object-fit: cover;
+      // height: max(10rem, 25vh);
+      max-height: max(10rem, 30vh);
+      aspect-ratio: 4/3;
+      mix-blend-mode: var(--card-blend-mode);
+      // filter: grayscale(100);
+  
+      ~ * {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Additional demo display styles */
+  
+  .gradient-card h3 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .gradient-card a {
+    color: inherit;
+  }
+  
+  .gradient-card-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-gap: 1.5rem;
+    max-width: 100vw;
+    width: 120ch;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }

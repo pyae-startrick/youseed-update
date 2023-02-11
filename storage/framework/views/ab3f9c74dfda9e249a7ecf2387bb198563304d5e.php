@@ -1,0 +1,2 @@
+
+<img style="width:100%;" src="/assets/default/img/home/no-access.jpg" alt=""><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/lms/resources/views/web/default/panel/webinar/create_includes/step_3.blade.php ENDPATH**/ ?>
